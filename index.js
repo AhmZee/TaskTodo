@@ -32,7 +32,7 @@ function addTodo() {
     
   const text = inputElement.value;
 
-  todoList.push({text});
+  todoList.unshift({text});
  
   inputElement.value = "";
   renderTodoList();
