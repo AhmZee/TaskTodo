@@ -79,7 +79,7 @@ h2{
   border-radius: 5px;
   display: block;
   margin: 5px 0 15px 222px;
-  padding: 4px;
+  padding: 6px;
 }
 
 .title,
@@ -106,7 +106,7 @@ h2{
   font-size: 15px;
   cursor: pointer;
   border-radius: 5px;
-  padding: 4px ;
+  padding: 6px ;
   width: 40px;
   margin: 5px 0 0 222px;
 }
@@ -117,7 +117,7 @@ h2{
   border: none;
   font-size: 15px;
   cursor: pointer;
-  padding: 4px;
+  padding: 6px;
   border-radius: 5px;
   width: 55px;
   margin: 0 0 15px 0;
