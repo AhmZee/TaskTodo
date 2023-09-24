@@ -9,6 +9,15 @@ body{
   background-color: rgb(7, 29, 37);
 }
 
+.headings{
+  display: grid;
+  grid-template-columns: 155px 1fr;
+  min-width: 300px;
+  row-gap: 10px;
+  margin: 20px 0;
+  font-weight: bold;
+}
+
 .container{
   width: 370px;
   background-color: whitesmoke;
@@ -29,36 +38,149 @@ h2{
   margin-bottom: 20px;
 }
 
-.todo-grid,
-.todo-input-grid {
-  display: grid;
-  grid-template-columns: 1fr 60px;
+.todo-input-grid{
+  width: 320px;
+  grid-template-columns: 1fr;
   column-gap: 10px;
   row-gap: 10px;
   align-items: center;
-}
-
-.todo-input-grid {
-  margin-bottom: 10px;
   align-items: stretch;
- 
+  text-align: right;
 }
 
-.text-input {
+
+
+.title-input,
+.description-input {
   font-size: 15px;
   padding: 6px;
   min-width: 100%;
+  margin: 3px 0;
   
 }
 
 .add-todo-button {
+  background-color: darkgreen;
+  color: white;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 6px 10px;
+  
+}
+
+.save-todo-button{
   background-color: green;
   color: white;
   border: none;
   font-size: 15px;
   cursor: pointer;
   border-radius: 5px;
+  display: block;
+  margin: 5px 0 15px 222px;
+  padding: 4px;
+}
+
+.title,
+.description{
+  display: inline-block;
+  width: 150px;
+  padding: 7.5px 0;
+}
+
+.js-edit-title,
+.js-edit-description{
+  display: inline-block;
+  font-size: 15px;
+  width: 158.5px;
+  padding: 6px;
+  background-color: transparent;
+}
+
+
+.todo-edit-button{
+  background-color: orange;
+  color: white;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 4px ;
+  width: 40px;
+  margin: 5px 0 0 222px;
+}
+
+.todo-delete-button {
+  background-color: red;
+  color: white;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 5px;
+  width: 55px;
+  margin: 0 0 15px 0;
+}
+
+
+@media (min-width: 900px) {
+
+  .container{
+    width: 600px;
+}
+
+.todo-input-grid{
+  width: 487px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 55px;
+  column-gap: 10px;
+  row-gap: 10px;
+  align-items: center;
+  align-items: stretch;
+}
+
+.title-input,
+.description-input,
+.js-edit-title,
+.js-edit-description {
+  font-size: 15px;
+  padding: 6px;
+  min-width: 100%;
+  margin: 0;
   
+}
+
+.headings{
+  display: grid;
+  grid-template-columns: 216px 1fr;
+  min-width: 300px;
+  row-gap: 10px;
+  margin: 20px 0;
+  font-weight: bold;
+}
+
+
+.edit-todo-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 55px 55px;
+  justify-content: center;
+  align-items: center;
+  row-gap: 10px;
+  column-gap: 10px;
+  margin-bottom: 10px;
+}
+
+.todo-edit-button{
+  background-color: orange;
+  color: white;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 8px 0;
+  width: 55px;
+  margin: 0;
 }
 
 .todo-delete-button {
@@ -69,11 +191,26 @@ h2{
   cursor: pointer;
   padding: 8px 0;
   border-radius: 5px;
+  width: 55px;
+  margin: 0;
 }
 
-@media (min-width: 900px) {
+.save-todo-grid{
+  width: 487px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 55px;
+  row-gap: 10px;
+  column-gap: 10px;
+  margin: 0 0 10px 0;
+}
 
-  .container{
-    width: 600px;
+.save-todo-button{
+  background-color: green;
+  color: white;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 0;
 }
 }
