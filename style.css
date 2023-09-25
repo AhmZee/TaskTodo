@@ -9,8 +9,8 @@ body{
   background-color: rgb(7, 29, 37);
 }
 
-.headings{
-  display: grid;
+.labels{
+  display: none;
   grid-template-columns: 155px 1fr;
   min-width: 300px;
   row-gap: 10px;
@@ -46,6 +46,7 @@ h2{
   align-items: center;
   align-items: stretch;
   text-align: right;
+  margin-bottom: 20px;
 }
 
 
@@ -151,7 +152,7 @@ h2{
   
 }
 
-.headings{
+.labels{
   display: grid;
   grid-template-columns: 216px 1fr;
   min-width: 300px;

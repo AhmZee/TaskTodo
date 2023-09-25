@@ -1,15 +1,21 @@
-
 const todoList = [];
 
 renderTodoList();
+
 function renderTodoList() {
+  const labels = document.querySelector(".labels");
+  if (todoList.length > 0) {
+    labels.style.display = "grid";
+  } else {
+    labels.style.display = "none";
+  }
   let todoListHTML = "";
 
   for (let i = 0; i < todoList.length; i++) {
     const todoObject = todoList[i];
 
-    const title  = todoObject.title;
-    const description  = todoObject.description;
+    const title = todoObject.title;
+    const description = todoObject.description;
 
     if (todoObject.startEdit) {
       // Display the edit input and save button
@@ -40,7 +46,6 @@ function renderTodoList() {
 }
 
 function addTodo() {
-  
   const titleElement = document.querySelector(".js-title-input");
   const descriptionElement = document.querySelector(".js-description-input");
   if (titleElement.value !== "" && descriptionElement.value !== "") {
@@ -49,8 +54,8 @@ function addTodo() {
     todoList.unshift({ title, description, startEdit: false });
     titleElement.value = "";
     descriptionElement.value = "";
-    renderTodoList();
   }
+  renderTodoList();
 }
 
 function startEditing(index) {
@@ -65,15 +70,13 @@ function saveTodo(index) {
   const editTitleInput = document.querySelector(".js-edit-title");
   const editDescriptionInput = document.querySelector(".js-edit-description");
 
-  if(editTitleInput.value === "" || editDescriptionInput.value === "") {
-
-  }else{
-  
-  todoList[index].title = editTitleInput.value;
-  todoList[index].description = editDescriptionInput.value;
-  todoList[index].startEdit = false;
-  renderTodoList();
-}
+  if (editTitleInput.value === "" || editDescriptionInput.value === "") {
+  } else {
+    todoList[index].title = editTitleInput.value;
+    todoList[index].description = editDescriptionInput.value;
+    todoList[index].startEdit = false;
+    renderTodoList();
+  }
 }
 
 function deleteTodo(index) {
