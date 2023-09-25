@@ -1,11 +1,6 @@
 
-const todoList = [{
-  title: "Todo list",
-  description: "Javascript",
-  startEdit: false
-}
-];
-console.log(todoList)
+const todoList = [];
+
 renderTodoList();
 function renderTodoList() {
   let todoListHTML = "";
@@ -56,7 +51,6 @@ function addTodo() {
     descriptionElement.value = "";
     renderTodoList();
   }
-  console.log(todoList)
 }
 
 function startEditing(index) {
@@ -81,6 +75,7 @@ function saveTodo(index) {
   renderTodoList();
 }
 }
+
 function deleteTodo(index) {
   todoList.splice(index, 1);
   renderTodoList();
