@@ -1,4 +1,8 @@
-const todoList = [];
+// Check if there's a stored to-do list in localStorage and load it
+
+const storedTodoList = JSON.parse(localStorage.getItem("todoList")) || [];
+
+const todoList = storedTodoList;
 
 renderTodoList();
 
@@ -55,6 +59,10 @@ function addTodo() {
     titleElement.value = "";
     descriptionElement.value = "";
   }
+
+  // Storing the updated to-do list to localStorage
+  localStorage.setItem("todoList", JSON.stringify(todoList));
+  
   renderTodoList();
 }
 
@@ -76,13 +84,19 @@ function saveTodo(index) {
     todoList[index].description = editDescriptionInput.value;
     todoList[index].startEdit = false;
     renderTodoList();
+
+     // Storing the updated to-do list to localStorage
+     localStorage.setItem("todoList", JSON.stringify(todoList));
   }
 }
 
 function deleteTodo(index) {
   todoList.splice(index, 1);
   renderTodoList();
+
+   localStorage.setItem("todoList", JSON.stringify(todoList));
 }
 
 // Initial rendering of the todo list
 renderTodoList();
+
